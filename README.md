@@ -95,11 +95,20 @@ Runs entirely locally, no API keys needed:
 python main.py
 ```
 
-Default model: `mlx-community/Llama-3.2-3B-Instruct-4bit`
+Default model: `mlx-community/Qwen2.5-14B-Instruct-4bit` (~10-15GB RAM)
+
+**Other recommended models:**
+
+| Model | RAM Usage | Best For |
+|-------|-----------|----------|
+| `mlx-community/Llama-3.2-3B-Instruct-4bit` | ~2GB | Low memory systems |
+| `mlx-community/Mistral-7B-Instruct-v0.3-4bit` | ~6-8GB | 16GB RAM Macs |
+| `mlx-community/Qwen2.5-14B-Instruct-4bit` | ~10-15GB | 32GB+ RAM (default) |
+| `mlx-community/Llama-3.1-70B-Instruct-4bit` | ~40GB | 64GB+ RAM, best quality |
 
 Use a different model:
 ```bash
-export MLX_MODEL="mlx-community/Mistral-7B-Instruct-v0.3-4bit"
+export MLX_MODEL="mlx-community/Llama-3.1-70B-Instruct-4bit"
 python main.py
 ```
 

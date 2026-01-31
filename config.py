@@ -6,7 +6,8 @@ import os
 LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "mlx")
 
 # MLX Configuration (local, Apple Silicon)
-MLX_MODEL = os.environ.get("MLX_MODEL", "mlx-community/Llama-3.2-3B-Instruct-4bit")
+# Default optimized for 64GB RAM machines - use 3B or 7B models for lower memory systems
+MLX_MODEL = os.environ.get("MLX_MODEL", "mlx-community/Qwen2.5-14B-Instruct-4bit")
 
 # Ollama Configuration (local server)
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
