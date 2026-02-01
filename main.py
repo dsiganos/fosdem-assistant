@@ -115,9 +115,10 @@ def main() -> None:
     """Main entry point."""
     console = Console()
 
-    # Check for API key
+    # Check for API key only if using Anthropic
     import os
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+    from config import LLM_PROVIDER
+    if LLM_PROVIDER == "anthropic" and not os.environ.get("ANTHROPIC_API_KEY"):
         console.print("[red]Error: ANTHROPIC_API_KEY environment variable not set.[/red]")
         console.print("Please set your Anthropic API key:")
         console.print("  export ANTHROPIC_API_KEY='your-key-here'")
